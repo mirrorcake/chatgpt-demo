@@ -1,6 +1,10 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = ""
+
+# key stored in file and added in gitignore
+with open("secret.txt", "r") as f:
+    openai.api_key = f.readline()
 
 
 def send(msg):
@@ -22,6 +26,7 @@ history = ""
 while True:
     msg = input("【人类】：")
     if msg == "exit" or msg == "再见":
+        print("【chatGPT】：" + msg + "！")
         break
     msg = history + msg
     res = "【chatGPT】：" + send(msg)
