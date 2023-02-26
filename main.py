@@ -25,7 +25,7 @@ history = ""
 
 while True:
     msg = input("【人类】：")
-    if msg == "exit" or msg == "再见":
+    if msg == "bye" or msg == "再见":
         print("【chatGPT】：" + msg + "！")
         break
     msg = history + msg
